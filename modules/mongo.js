@@ -40,7 +40,9 @@ db.getCollection('works').insert({
 
 const Work = mongoose.model('work', workSchema); // work est un modèle Mongoose.
 												 // 'work' indique à Mongoose d'utiliser la collection 'works'
-mongoose.connect('mongodb://localhost/urban', (err) => {
+
+// mongoose.connect('mongodb://localhost/urban', (err) => {
+mongoose.connect('mongodb://test:test@ds055782.mlab.com:55782/urban', (err) => {
 	if (err) {return console.error("Error connecting to MongoDB!");}
 });
 

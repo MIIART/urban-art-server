@@ -1,0 +1,51 @@
+{
+    "photos" : [ 
+        "graf-1.jpg"
+    ],
+    "title" : "Deep sea blue",
+    "datePosted" : "2016-12-14T08:50:49.274Z),
+    "address" : "place des augustins, Genève",
+    "pos" : [ 
+        6.144571, 
+        46.191814
+    ],
+    "description" : "A beautiful work",
+    "idCat" : "0",
+    "artists" : [ 
+        "wertucuhkjhjfa"
+    ]
+}
+{
+	"photos": [
+		"graf-2.jpg"
+	],
+	"title": "Bienvenu au coin",
+	"datePosted": "2016-12-14T08:51:01.192Z",
+	"address": "Place de Bel-Air, Genève",
+	"pos": [
+		"6.143171",
+		"46.204366"
+	],
+	"description": "Another beautiful work",
+	"idCat": "0",
+	"artists": [
+		"wertucuhkjhjfa"
+	]
+} 
+{
+	"photos": [
+		"graf-3.jpg"
+	],
+	"title": "Arts in the train station",
+	"datePosted": "2016-12-14T08:51:02.918Z",
+	"address": "Gare Cornavin, Genève",
+	"pos": [
+		"6.142467",
+		"46.209454"
+	],
+	"description": "Fine work",
+	"idCat": "0",
+	"artists": [
+		"wertucuhhgffjfa"
+	]
+}
