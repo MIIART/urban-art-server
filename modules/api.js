@@ -1,5 +1,6 @@
 
 const Work = require('./mongo').Work
+const Category = require('./mongo').Category
 
 const api = {
 	get : (req,res) => {
@@ -19,7 +20,13 @@ const api = {
 			if(err) return console.log(err);
 			res.json(doc);
 		})
-	}
+	},
+	getCategory : (req,res) => {
+		Category.find((err, docs) => {
+			if(err) return console.log(err);
+			res.json(docs);
+		})
+	}	
 }
 
 module.exports = {

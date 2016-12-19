@@ -19,6 +19,7 @@ app
 	.get('/works', api.get)
 	.post('/works', api.add)
 	.delete('/:id', api.delete )
+	.getCategory('/categories', api.getCategory)
 
 server.listen(port, ()=>{
 	console.log("Listnening on port " + port)
