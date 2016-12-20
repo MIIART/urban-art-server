@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const workSchema = mongoose.Schema({
-    photos: [String],
+    _id: Number, 
+    photos: [Number],
     title : String,
     datePosted: Date,
     address: String,
@@ -10,7 +11,7 @@ const workSchema = mongoose.Schema({
     	index: '2d'      // create the geospatial index
 	},    
     description: String,
-    idCat: Number,
+    idCat: String,
     artists: [String]
 });
 

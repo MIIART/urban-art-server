@@ -1,6 +1,10 @@
 
 const Work = require('./mongo').Work
 const Category = require('./mongo').Category
+const fs = require("fs");
+
+const root = __dirname.replace("urban-art-server/modules","urban-art-ionic")+"/www"
+const imagesPath = root + "/assets/images/works/";
 
 const api = {
 	get : (req,res) => {
@@ -16,8 +20,12 @@ const api = {
 		})
 	},
 	add : (req,res) =>{
+
+		console.log("Saving work to DB");
+
 		(new Work(req.body)).save((err, doc) => {
 			if(err) return console.log(err);
+			console.log("Saved work to DB", doc);
 			res.json(doc);
 		})
 	},
@@ -26,7 +34,13 @@ const api = {
 			if(err) return console.log(err);
 			res.json(docs);
 		})
-	}	
+	},
+	saveImage : (req, res) => {
+		console.log("api : saving image to " + imagesPath, req.body.imgData)
+		fs.writeFile( imagesPath + req.body.imgName + ".jpeg", req.body.imgData, "base64" , () => {
+			res.end()
+		})
+	}
 }
 
 module.exports = {
