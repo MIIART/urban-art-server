@@ -1,11 +1,22 @@
+const mongoose = require('mongoose');
 
 const Work = require('./mongo').Work
 const Category = require('./mongo').Category
+const Artist = require('./mongo').Artist
 const fs = require("fs");
+/* MAC */
+//const root = __dirname.replace("urban-art-server/modules","urban-art-ionic")+"/www"
+const imagesPath = "./img/";
 
-const root = __dirname.replace("urban-art-server/modules","urban-art-ionic")+"/www"
-const imagesPath = root + "/assets/images/works/";
+//const imagesPath = root + "/assets/images/works/";
+mongoose.connect('mongodb://test:test@ds055782.mlab.com:55782/urban', (err) => {
+	if (err) {return console.error("Error connecting to MongoDB!");}
+});
 
+/* Windows configuraton 
+const root = __dirname.replace("urban-art-server\modules","urban-art-ionic") + "\www";
+const imagesPath = root + "\assets\images\works\\";
+*/
 const api = {
 	get : (req,res) => {
 		Work.find((err, docs) => {
@@ -31,6 +42,12 @@ const api = {
 	},
 	getCategory : (req,res) => {
 		Category.find((err, docs) => {
+			if(err) return console.log(err);
+			res.json(docs);
+		})
+	},
+	getArtist : (req,res) => {
+		Artist.find((err, docs) => {
 			if(err) return console.log(err);
 			res.json(docs);
 		})

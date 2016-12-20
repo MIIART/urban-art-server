@@ -7,12 +7,12 @@ const bodyParser = require('body-parser');
 
 
 const api = require('./modules/api').api;
-const root = __dirname.replace("urban-art-server","urban-art-ionic")+"/www"
-
+const root = __dirname.replace("urban-art-server","urban-art-ionic")+"/www" // MAC
+//const root = __dirname.replace("urban-art-server","urban-art-ionic")+"\www" // windows
 
 
 const log = (req,res,next) => {
-	console.log("Route post /images reached");
+	console.log("Route post /images reached: ", root);
 	next();
 }
 
@@ -20,13 +20,16 @@ app
 	.use(express.static(root))
 	.use(bodyParser.urlencoded({extended: true}))
 	.use(bodyParser.json())
+	.use(express.static('img'));
 
 app
 	.get('/works', api.get)
 	.post('/works', api.add)
+	.post('/images', log, api.saveImage)
 	.delete('/:id', api.delete )
 	.get('/categories', api.getCategory )
-	.post('/images', log, api.saveImage)
+	.get('/artists', api.getArtist )
+	
 
 
 

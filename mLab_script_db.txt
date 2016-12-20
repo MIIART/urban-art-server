@@ -10,17 +10,14 @@ db.getCollection('works').insert({
         artists: ["wertucuhkjhjfa"],
     })
 
-db.getCollection('works').insert({
-        photos: ["graf-2.jpg"],
-        title : "Bienvenu au coin",
-        datePosted: new Date(),
-        address: "Place de Bel-Air, Genève",
-        pos:[6.143171, 46.204366],
-        description: "Another beautiful work",
-        idCat: 0,
-        artists: ["wertucuhkjhjfa"],
+db.getCollection('users').insert({
+        name: "test",
+        email : "test@test.ch",
+        password: "test",
+        favorite: ["wertucuhkjhjfa"],
     })
 */
+
 /* MongoLab script for insert data */
 {
     "photos" : [ 
@@ -72,4 +69,64 @@ db.getCollection('works').insert({
 	"artists": [
 		"wertucuhhgffjfa"
 	]
+}
+
+/* 1 */
+{
+    "_id" : ObjectId("58511836734d1d2c4aa79d14"),
+    "photos" : [ 
+        "1"
+    ],
+    "title" : "Deep sea blue",
+    "datePosted" : "2016-12-14T08:50:49.274Z",
+    "address" : "place des augustins, Genève",
+    "pos" : [ 
+        "6.144571", 
+        "46.191814"
+    ],
+    "description" : "A beautiful work",
+    "idCat" : "0",
+    "artists" : [ 
+        "wertucuhkjhjfa"
+    ]
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("58511a11734d1d2c4aa79da8"),
+    "photos" : [ 
+        "2"
+    ],
+    "title" : "Bienvenu au coin",
+    "datePosted" : "2016-12-14T08:51:01.192Z",
+    "address" : "Place de Bel-Air, Genève",
+    "pos" : [ 
+        "6.143171", 
+        "46.204366"
+    ],
+    "description" : "Another beautiful work",
+    "idCat" : "0",
+    "artists" : [ 
+        "wertucuhkjhjfa"
+    ]
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("58511a27734d1d2c4aa79daa"),
+    "photos" : [ 
+        "assets/images/works/graf-3.jpg"
+    ],
+    "title" : "Fine work",
+    "datePosted" : "2016-12-14T08:51:02.918Z",
+    "address" : "Gare Cornavin, Genève",
+    "pos" : [ 
+        "6.142467", 
+        "46.209454"
+    ],
+    "description" : "Arts in the train station",
+    "idCat" : "0",
+    "artists" : [ 
+        "wertucuhhgffjfa"
+    ]
 }
