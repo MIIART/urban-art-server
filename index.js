@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 const server = require('http').createServer(app);
 const port = 8000;
@@ -20,7 +21,8 @@ app
 	.use(express.static(root))
 	.use(bodyParser.urlencoded({extended: true}))
 	.use(bodyParser.json())
-	.use(express.static('img'));
+	.use(express.static('img'))
+	.use(cors());
 
 app
 	.get('/works', api.get)
