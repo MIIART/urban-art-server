@@ -27,10 +27,11 @@ app
 app
 	.get('/works', api.get)
 	.post('/works', api.add)
-	.post('/images', log, api.saveImage)
+	.post('/images', log, api.saveImage) // Saves image Base64
 	.delete('/:id', api.delete )
 	.get('/categories', api.getCategory )
 	.get('/artists', api.getArtist )
+	.get("/img/:imgName", (req,res) => res.sendFile( __dirname + "/img/" + req.params.imgName)) // /img/1482255949367-1.jpeg
 	
 
 
