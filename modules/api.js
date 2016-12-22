@@ -6,7 +6,7 @@ const Artist = require('./mongo').Artist
 const fs = require("fs");
 /* MAC */
 //const root = __dirname.replace("urban-art-server/modules","urban-art-ionic")+"/www"
-const imagesPath =  __dirname + "/img/";
+const imagesPath = __dirname.replace("/modules","") + "/img/";
 
 //const imagesPath = root + "/assets/images/works/";
 mongoose.connect('mongodb://test:test@ds055782.mlab.com:55782/urban', (err) => {
