@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Work = require('./mongo').Work
 const Category = require('./mongo').Category
 const Artist = require('./mongo').Artist
+const User = require('./mongo').User
 const fs = require("fs");
 /* MAC */
 //const root = __dirname.replace("urban-art-server/modules","urban-art-ionic")+"/www"
@@ -50,6 +51,22 @@ const api = {
 		Artist.find((err, docs) => {
 			if(err) return console.log(err);
 			res.json(docs);
+		})
+	},
+	getUser : (req,res) => {
+		User.find((err, docs) => {
+			if(err) return console.log(err);
+			res.json(docs);
+		})
+	},
+	addUser : (req,res) =>{
+
+		console.log("Saving user to DB");
+
+		(new User(req.body)).save((err, doc) => {
+			if(err) return console.log(err);
+			console.log("Saved user to DB", doc);
+			res.json(doc);
 		})
 	},
 	saveImage : (req, res) => {

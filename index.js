@@ -32,6 +32,8 @@ app
 	.get('/categories', api.getCategory )
 	.get('/artists', api.getArtist )
 	.get("/img/:imgName", (req,res) => res.sendFile( __dirname + "/img/" + req.params.imgName)) // /img/1482255949367-1.jpeg
+	.get('/users', api.getUser)
+	.post('/users', api.addUser)
 	
 
 
