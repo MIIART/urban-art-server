@@ -54,9 +54,16 @@ const api = {
 		})
 	},
 	getUser : (req,res) => {
-		User.find((err, docs) => {
+		User.findOne({
+			email : req.body.email,
+			password : req.body.password
+		},
+			(err, doc) => {
 			if(err) return console.log(err);
-			res.json(docs);
+
+			if(!doc) return res.status(403).end();
+
+			res.json(doc);
 		})
 	},
 	addUser : (req,res) =>{
