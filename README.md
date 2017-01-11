@@ -5,3 +5,7 @@ Application Mobile Back-end Server
 ```
 heroku logs --app ionic-urban-art --tail
 ```
+
+```
+git push https://happybirdw@github.com/happybirdw/urban-art-server.git
+```
